@@ -1,0 +1,612 @@
+@import url(https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css);#minisearch .minisearch-results>div>img,.imgBox .gallery div img {
+  background-size: 70px 70px;
+  background-color: #0002;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%
+}
+
+#minisearch .results label span,#minisearch div mark,.search .historial div span {
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+.template {
+  position: relative;
+  overflow: auto;
+  display: flex
+}
+
+.consola,.consola div,.install,app {
+  display: flex
+}
+
+.imgBox>div,.install {
+  box-shadow: 0 0 1em #000
+}
+
+app {
+  flex-direction: column
+}
+
+.install {
+  margin: auto;
+  padding: .5em;
+  border: 1px outset #acacac;
+  border-radius: .2em;
+  align-items: center
+}
+
+.imgBox,.menu-edite {
+  flex-direction: column
+}
+
+.install img {
+  height: 2.5em;
+  width: auto
+}
+
+.consola {
+  background: #2f3a51;
+  padding: .3em;
+  font-size: 1.1em;
+  border-bottom: 1px outset #acacac
+}
+
+.consola div {
+  width: 100%
+}
+
+#minisearch div:hover>span,.consola .search a,.consola b,.consola div.aboutme:hover>div,.consola>a,.search .historial div b {
+  display: inline-block
+}
+
+.consola>a {
+  font-size: 1em;
+  padding: .2em
+}
+
+.consola :is(button,label) {
+  margin: 0 .1em
+}
+
+.consola label,.menu-edite label.true {
+  color: #1e90ff
+}
+
+.consola input[type=checkbox]:checked~span {
+  color: #000
+}
+
+.consola .search {
+  border: 1px solid #acacac;
+  box-shadow: 0 0 3px #000;
+  background: #1e90ff;
+  width: 100%;
+  max-width: 10em;
+  border-radius: .2em;
+  display: flex;
+  padding: 0
+}
+
+.consola .search input {
+  border: none;
+  border-left: 1px solid #acacac;
+  width: 100%;
+  padding: 0 .3em;
+  border-radius: .2em;
+  font-size: .8em;
+  z-index: 10;
+  box-shadow: 0 0 5px #000
+}
+
+.confirm,.menu-edite {
+  border-radius: .2em;
+  background-color: #fcfcfc
+}
+
+.consola .search a {
+  padding: .2em .3em;
+  font-size: 1em;
+  color: #fff
+}
+
+.menu-edite {
+  display: flex;
+  color: #222;
+  box-shadow: 0 0 1rem #000;
+  z-index: 20;
+  border: 1px outset #acacac;
+  overflow: hidden;
+  width: 8em;
+  min-width: 0;
+  max-width: 100%;
+  padding: .2em;
+  transform: translate (-50%,-50%)
+}
+
+.menu-edite>label {
+  padding: .3em .5em;
+  margin: 0;
+  font-weight: 500;
+  width: 100%;
+  white-space: nowrap
+}
+
+.menu-edite>div {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden
+}
+
+.menu-edite>div>label {
+  width: 25%;
+  padding: .3em .5em;
+  margin: 0;
+  text-align: center
+}
+
+.menu-edite label.none {
+  color: #dcdcdc
+}
+
+.menu-edite .white {
+  border-bottom: 1px solid #0003
+}
+
+.confirm {
+  margin: auto;
+  width: 20em;
+  padding: .5em;
+  box-shadow: 0 0 5px #000;
+  border: none
+}
+
+#minisearch,.imgBox {
+  position: fixed;
+  display: none;
+  background: #0003
+}
+
+.imgBox .gallery,.imgBox>div {
+  border-radius: .2em;
+  display: flex;
+  overflow: auto
+}
+
+.confirm p {
+  overflow: auto
+}
+
+.imgBox {
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding: .4em
+}
+
+.imgBox input[type="url"] {
+  width: 100%
+}
+
+.imgBox>div,.wait {
+  flex-direction: column
+}
+
+label.close-gallery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: .2em;
+  padding: .1em;
+  font-size: 1.2em;
+  z-index: 50;
+  display: flex
+}
+
+label.close-gallery span {
+  margin: 0 .2em;
+  padding: .3em;
+  border-radius: .3em;
+  background: #000;
+  color: #fff;
+  font-size: .6em
+}
+
+.imgBox>div {
+  background: var(--bg);
+  padding: 2em .4em .4em;
+  margin: auto;
+  position: relative;
+  width: 90%;
+  height: 15em;
+  max-width: 25em
+}
+
+.imgBox div.img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  padding: .5em;
+  overflow: hidden
+}
+
+.imgBox .gallery {
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding: .2em;
+  box-shadow: inset 0 0 2em var(--bg-shadow)
+}
+
+.imgBox .gallery div {
+  aspect-ratio: 1/1;
+  display: inline!important;
+  margin: .05em;
+  overflow: hidden;
+  position: relative;
+  width: calc(33.333% - .1em);
+}
+
+.imgBox .gallery div img {
+  background-image: repeating-conic-gradient(#fff1 0 25%,transparent 0 50%);
+  background-position: 0 0,33px 33px
+}
+
+.imgBox .gallery div label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: .1em;
+  background: red;
+  border-radius: .1em;
+  padding: .1em .2em;
+  color: #fff;
+  z-index: 5;
+  font-size: .7em
+}
+
+.imgBox .input {
+  width: 100%;
+  display: flex;
+  padding: .2em
+}
+
+.input[type="file"] {
+  background-color: #f8f9fc;
+  border: 1px solid #e2e9f3;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: .9em;
+  border-radius: 4px;
+  width: 100px;
+  color: #565A90;
+  padding: 0;
+  margin: .2em
+}
+
+.input[type="file"]::file-selector-button {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #595ef1bd;
+  border: 1px solid #595ef1bd;
+  width: 100%;
+}
+
+.imgBox input[type="file"] ,input[type="url"] {
+  position: relative;
+  width: 100%;
+  margin: 0
+}
+
+input[type="file"]::file-selector-button {
+  width: 100%;
+  color: transparent;
+}
+
+input[type="file"]::before {
+  position: absolute;
+  pointer-events: none;
+  top: 10px;
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+  margin: 0
+}
+
+input[type="file"]::after {
+  position: absolute;
+  pointer-events: none;
+  top: 11px;
+  left: 40px;
+  color: #0964b0;
+  content: "Upload IMG";
+}
+
+.imgBox input[type="url"] ,input[type="file"]::file-selector-button {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin: 0;
+  margin-right: 16px;
+}
+
+.consola div.aboutme>div,.search .historial {
+  max-height: 90%;
+  background: var(--bg);
+  font-size: .8em
+}
+
+@media(max-width: 800px) {
+  .imgBox>div {
+    height:100%;
+    width: 100%;
+    max-width: 17em
+  }
+}
+
+.dots-bg {
+  background-image: radial-gradient(#6194b7 3px,transparent 3px),radial-gradient(#6194b7 3px,transparent 3px);
+  background-size: 33px 33px;
+  background-position: 0 0,16.5px 16.5px;
+  background-color: rgba(209,234,242,0)
+}
+
+.waves-bg {
+  background-image: repeating-radial-gradient(circle at 0 0,transparent 0,rgba(209,234,242,.3) 50%),repeating-linear-gradient(#6194b7,#6194b7);
+  background-color: rgba(209,234,242,.32)
+}
+
+.diamont-bg {
+  background: linear-gradient(45deg,#000 0,#000 5%,transparent 5%,transparent 10%,#000 10%,#000 15%,transparent 15%,transparent 20%,#000 20%,#000 25%,transparent 25%,transparent 30%,#000 30%,#000 35%,transparent 35%,transparent 40%,#000 40%,#000 45%,transparent 45%,transparent 50%,#000 50%,#000 55%,transparent 55%,transparent 60%,#000 60%,#000 65%,transparent 65%,transparent 70%,#000 70%,#000 75%,transparent 70%,transparent 80%,#000 80%,#000 85%,transparent 85%,transparent 90%,#000 90%,#000 95%,transparent 95%),linear-gradient(135deg,#000 0,#000 5%,transparent 5%,transparent 10%,#000 10%,#000 15%,transparent 15%,transparent 20%,#000 20%,#000 25%,transparent 25%,transparent 30%,#000 30%,#000 35%,transparent 35%,transparent 40%,#000 40%,#000 45%,transparent 45%,transparent 50%,#000 50%,#000 55%,transparent 55%,transparent 60%,#000 60%,#000 65%,transparent 65%,transparent 70%,#000 70%,#000 75%,transparent 70%,transparent 80%,#000 80%,#000 85%,transparent 85%,transparent 90%,#000 90%,#000 95%,transparent 95%);
+  background-size: .5em .5em;
+  background-color: #2f3a51;
+  opacity: .8
+}
+
+#minisearch .minisearch-results>div>img,.square-bg {
+  background-image: repeating-conic-gradient(#fff1 0 25%,transparent 0 50%);
+  background-position: 0 0,33px 33px
+}
+
+.square-bg {
+  background-size: 66px 66px;
+  background-color: #0001
+}
+
+.wait {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0004;
+  color: #fff;
+  display: none;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 0 0 3px #000;
+  z-index: 9999
+}
+
+.wait.show {
+  display: flex
+}
+
+#minisearch {
+  flex-direction: column;
+  z-index: 50
+}
+
+#minisearch .results {
+  border-radius: .2em;
+  width: 96%;
+  height: 96%;
+  position: relative;
+  max-width: 20em;
+  background: var(--bg);
+  padding: 2em .2em .2em;
+  display: inline-block;
+  box-shadow: 0 0 1em #111;
+  margin: auto
+}
+
+#minisearch .minisearch-results {
+  border-radius: .3em;
+  box-shadow: inset 0 0 3em var(--bg-shadow);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: auto;
+  margin: auto
+}
+
+#minisearch .minisearch-results div {
+  aspect-ratio: 1/1;
+  display: inline!important;
+  margin: 0 .1em;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: calc(33.33% - .2em)!important
+}
+
+#minisearch div>i {
+  font-size: 1.5em;
+  margin: auto
+}
+
+#minisearch div>b {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: .4em;
+  white-space: nowrap;
+  padding: .1em;
+  border-radius: .1em;
+  background: var(--bg)
+}
+
+#minisearch div>b.true {
+  border-left: 3px solid #00da03
+}
+
+#minisearch div a {
+  background: #1e90ff;
+  display: inline-block;
+  border-radius: .3em;
+  padding: .3em;
+  color: #fff;
+  margin: .1em;
+  font-size: 1.7em
+}
+
+#minisearch div mark {
+  display: inline-block;
+  width: 100%;
+  padding: .3em;
+  overflow: hidden
+}
+
+#minisearch div>span {
+  font-size: .3em;
+  display: none;
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.8);
+  padding: .5em;
+  color: #fff;
+  z-index: 6
+}
+
+#minisearch p {
+  font-size: .6em;
+  position: sticky;
+  bottom: .1em;
+  margin-top: .2em;
+  border-radius: .2em;
+  z-index: 20;
+  width: 98%;
+  box-shadow: 0 0 .2em #000;
+  background: var(--bg)
+}
+
+#minisearch .minisearch-results>div>img {
+  overflow: hidden
+}
+
+#minisearch .results label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 15;
+  margin: .1em;
+  left: 0;
+  top: 0;
+  background: var(--bg);
+  border-radius: 0 0 .2em;
+  font-weight: 900;
+  font-size: 1.5em;
+  max-width: 85%;
+  padding: .2em
+}
+
+#minisearch .results label span {
+  font-size: .5em;
+  display: inline-block;
+  padding: .3em;
+  width: 100%;
+  overflow: hidden
+}
+
+.search .historial {
+  position: absolute;
+  z-index: 7;
+  width: 9em;
+  overflow: auto;
+  left: 3em;
+  top: 2.6em;
+  display: inline-block;
+  border-radius: .1em;
+  font-weight: 900;
+  box-shadow: 0 0 .2em #000
+}
+
+.search .historial div {
+  display: flex;
+  width: 100%;
+  padding: .4em .3em;
+  border-bottom: solid .3px var(--border)
+}
+
+.search .historial div span {
+  width: 100%;
+  display: inline-block;
+  overflow: hidden;
+  text-transform: capitalize
+}
+
+.no-internet {
+  display: none
+}
+
+.consola div.aboutme {
+  width: auto
+}
+
+.consola div.aboutme>div {
+  width: 14em;
+  max-width: 80%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: .2em;
+  box-shadow: 0 0 1em #000;
+  z-index: 70;
+  padding: .3em;
+  overflow: auto;
+  margin: 1em;
+  text-align: center;
+  display: none
+}
+
+div.aboutme :is(a,span,ul) {
+  width: 100%;
+  display: inline-block;
+  font-size: .7em
+}
+
+div.aboutme a {
+  color: #1e90ff;
+  font-weight: 700
+}
+
+div.aboutme ul {
+  color: red;
+  font-size: .6em;
+  font-weight: 700;
+  padding: .1em
+}
+
+div.aboutme img {
+  width: 15em;
+  height: 15em;
+  background: #1e90ff;
+  border-radius: 12em
+}
+
+@media(max-width: 500px) {
+  .consola b {
+    display:none
+  }
+}
